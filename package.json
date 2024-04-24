@@ -1,20 +1,80 @@
 {
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "mongodb": "^3.5.9",
-    "next": "latest",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
-  },
-  "devDependencies": {
-    "@heroicons/react": "^1.0.4",
-    "autoprefixer": "^10.3.4",
-    "postcss": "^8.3.6",
-    "tailwindcss": "^2.2.15"
-  }
+  "users": [
+    {
+      "_id": "user1",
+      "username": "john_doe",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "followers": ["user2", "user3"],
+      "following": ["user4", "user5"],
+      "created_at": "2024-04-21T12:00:00Z"
+    },
+    {
+      "_id": "user2",
+      "username": "jane_smith",
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "followers": ["user1"],
+      "following": ["user3", "user4"],
+      "created_at": "2024-04-20T10:00:00Z"
+    }
+    // More user objects
+  ],
+  
+  "posts": [
+    {
+      "_id": "post1",
+      "author": "user1",
+      "content": "Check out this amazing article!",
+      "hashtags": ["tech", "article"],
+      "likes": 50,
+      "comments": [
+        {
+          "user": "user2",
+          "comment": "Great post!"
+        },
+        {
+          "user": "user3",
+          "comment": "Interesting read!"
+        }
+      ],
+      "created_at": "2024-04-21T12:30:00Z"
+    },
+    {
+      "_id": "post2",
+      "author": "user2",
+      "content": "Excited to announce our new product!",
+      "hashtags": ["product", "launch"],
+      "likes": 100,
+      "comments": [],
+      "created_at": "2024-04-20T15:00:00Z"
+    }
+    // More post objects
+  ],
+  
+  "hashtags": [
+    {
+      "_id": "tech",
+      "posts": ["post1", "post3", "post5"]
+    },
+    {
+      "_id": "article",
+      "posts": ["post1", "post4"]
+    }
+    // More hashtag objects
+  ],
+  
+  "user_networks": [
+    {
+      "_id": "user1",
+      "followers": ["user2", "user3"],
+      "following": ["user4", "user5"]
+    },
+    {
+      "_id": "user2",
+      "followers": ["user1"],
+      "following": ["user3", "user4"]
+    }
+    // More user network objects
+  ]
 }
